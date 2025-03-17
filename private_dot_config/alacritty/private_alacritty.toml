@@ -1,20 +1,222 @@
+
+# Переменные окружения
+[env]
+TERM = "screen-256color"
+COLORTERM = "truecolor"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+# Настройки оболочки
+[terminal.shell]
+program = "/bin/tmux"
+args = ["-l", "-2"]
+
+# Настройки окна
 [window]
-padding = { x = 10, y = 5 }
+option_as_alt = "Both"
+decorations = "Buttonless"
+opacity = 0.85
+blur = true
+dimensions = { columns = 82, lines = 26 }
+
+# Отступы
+padding = { x = 5, y = 5 }
+
+# Динамические отступы
 dynamic_padding = true
-opacity = 0.90
 
+# Настройки запуска
+startup_mode = "Windowed"
+title = "Alacritty"
 
+# Класс окна
+class = { instance = "Alacritty", general = "Alacritty" }
+
+# Настройки шрифтов
 [font]
-normal = { family = "MesloLGS NF", style = "Regular" }
-size = 14
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 11.0
+
+# Настройки отступов для шрифта
+offset = { x = 0, y = 0 }
+glyph_offset = { x = 0, y = 0 }
+
+# Настройки выбора текста
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+# Настройки курсора
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 750
+unfocused_hollow = true
+thickness = 0.15
+
+# Настройки скроллинга
+[scrolling]
+history = 10000
+multiplier = 3
+
+# Настройки мыши
+[mouse]
+hide_when_typing = true
+
+# Привязки мыши
+[[mouse.bindings]]
+mouse = "Middle"
+action = "PasteSelection"
+
+# Горячие клавиши
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+key = "M"
+mods = "Control|Shift"
+action = "ToggleMaximized"
+
+[[keyboard.bindings]]
+key = "Q"
+mods = "Control|Shift"
+action = "Quit"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Control|Shift"
+action = "Hide"
 
 
-[colors.primary]
-background = "#1e1e2e"
-foreground = "#cdd6f4"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "Insert"
+mods = "Shift"
+action = "PasteSelection"
+#
+# [mouse]
+# hide_when_typing = true
+
+#[[keyboard.bindings]]
+#key = "V"
+#mods = "Control|Shift"
+#action = "Paste"
+
+#[[keyboard.bindings]]
+#key = "C"
+#mods = "Control|Shift"
+#action = "Copy"
+
+#[[keyboard.bindings]]
+#key = "Insert"
+#mods = "Shift"
+#action = "PasteSelection"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "Equals"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "SpawnNewInstance"
+
+# Настройки отладки
+[debug]
+render_timer = false
+persistent_logging = false
+log_level = "Warn"
+print_events = false
+
+[general]
+# import = ["~/.config/alacritty/themes/themes/github_dark_colorblind.toml"]
+# # import = [
+# #     "~/.config/alacritty/themes/themes/bluish.toml"
+# # ]
+# [env]
+# TERM = "screen-256color"
+#
+# [shell]
+# program = "/bin/tmux"
+# args = ["-l"]
+#
+# [window]
+# option_as_alt = "Both"
+# padding.x = 5
+# padding.y = 5
+# decorations = "Buttonless"
+# opacity = 0.80
+# blur = true
+# # opacity = 1
+# # blur = false
+#
+#
+# dimensions = { columns = 82, lines = 26 }
+#
+# # Минимальные размеры
+# #min_dimensions = { columns = 80, lines = 24 }
+#
+#
+#
+# [font]
+# # normal.family = "MesloLGS Nerd Font Mono"
+# # normal.family = "Fira Code "
+# # normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+# normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+# bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+# italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+# bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+#
+#
+# size = 11.0
+#
+#
+# [selection]
+# save_to_clipboard = true
+#
+# [keyboard]
+# bindings = [
+#     { key = "F", mods = "Control|Shift", action = "ToggleFullscreen" },
+#     { key = "M", mods = "Control|Shift", action = "ToggleMaximized" },
+#     { key = "Q", mods = "Control|Shift", action = "Quit" },
+#     { key = "H", mods = "Control|Shift", action = "Hide" },
+# ]
+#
+# [mouse]
+# hide_when_typing = true
+#
+
+
+# Импорт темы
+import = [
+    # Закомментированные альтернативы
+    "~/.config/alacritty/themes/themes/github_dark_colorblind.toml"
+    # "~/.config/alacritty/themes/themes/dracula.toml"
+    # "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+    ]
 
 [terminal]
-
-[terminal.shell]
-program = "tmux"
-args = ["new-session", "-A", "-D", "-s", "Home"]
